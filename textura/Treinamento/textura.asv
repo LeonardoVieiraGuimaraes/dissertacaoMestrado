@@ -1,0 +1,28 @@
+clear all;
+close all;
+tt = 1;
+arquivo = fopen('Textura_Vitoria.txt', 'w+');
+for t = 0:6:24
+    for n = 1:30
+        filename = sprintf('vitoria_%dh_%d.jpg',t,n);
+        
+        I = imread(filename);
+        R = I(:,:,1);
+        G = I(:,:,1);
+        B = I(:,:,2);
+        
+        RX = extractLBPFeatures(R,'Upright',false);
+        GX = extractLBPFeatures(G,'Upright',false);
+        BX = extractLBPFeatures(B,'Upright',false);
+        temp = [RX ;
+       
+        
+       
+        M = [temp tt 1];
+        fprintf(arquivo, '%d ' , M);   
+        fprintf(arquivo,'\n');
+    end
+    tt = tt + 1;
+end
+         
+         

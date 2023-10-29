@@ -1,0 +1,13 @@
+
+
+ims = imageDatastore('C:\Users\Leonardo\Google Drive\2_Semestre\Dissertação\RGB_12\Italia\0');
+
+
+
+extractorFcn = @exampleBagOfFeaturesExtractor;
+B = bagOfFeatures(ims,'CustomExtractor',extractorFcn);
+
+H = econde(B,);
+
+ 
+ 
